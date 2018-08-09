@@ -4,10 +4,10 @@ Aplicacion De Reciclaje Masivo(ARM)
 
 Desarrolladores:
 
--Juan Sebastian Rivera
--Juan Sebastian Lozano
--Juan Diego Balanta
--Juan Miguel Cardona
+-Juan Sebastian Rivera.\n
+-Juan Sebastian Lozano.\n
+-Juan Diego Balanta.\n
+-Juan Miguel Cardona.\n
 
 
 Nombre de la Empresa: ? 
