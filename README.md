@@ -1,6 +1,6 @@
 # Proyecto Gran Escala
 
-## Aplicacion De Reciclaje Masivo(ARM)
+## Aplicacion De Reciclaje Masivo - Smartgreen
 
 ### Desarrolladores:
 
@@ -10,7 +10,8 @@
 * Juan Miguel Cardona.
 
 
-### Nombre de la Empresa: ? 
+### Nombre de la Empresa: GreenWonder 
 
-## ---Logo de la Empresa Pendiente--- 
+![logoempresa](https://user-images.githubusercontent.com/12604660/44176608-2299e780-a0b0-11e8-9c26-ccc3f6ffcaee.jpeg)
+
 
