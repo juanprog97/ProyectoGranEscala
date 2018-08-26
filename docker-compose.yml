@@ -6,6 +6,18 @@ services:
       app_net:
         ipv4_address: 19.18.18.2
 
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    networks:
+      app_net:
+       ipv4_address: 19.18.18.4
+
 networks:
   app_net:
     driver: bridge
