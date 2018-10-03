@@ -1,0 +1,2 @@
+El docker file no copiaba el archivo de green Wonder debido a que esta, tenia que esta dentro de la carpeta Nginx
+Les recomiendo hacer un nuevo docker-compose up --build.
