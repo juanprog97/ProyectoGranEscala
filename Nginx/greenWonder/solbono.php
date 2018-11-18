@@ -1,15 +1,3 @@
-<?php
-$servername = "19.18.18.4:3306";
-$username = "test";
-$password = "test";
-$dbname = "test";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT nombrePremio,precio FROM Premios";
-
-?>
 <html>
 <title>ERP-GREEN WONDER</title>
 <meta charset="UTF-8">
@@ -37,16 +25,11 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white"
-     onclick="window.location.href='admin.php'">
-    	Inicio
-    </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='agmat.php'">
-    	Agregar Materiales
-    </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='agbono.php'" >Agregar Premios</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white" onclick="window.location.href='mbonos.php'" >Mostrar Bonos Actuales</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'" >LogOut</a>
+     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">Inicio</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">Solicitar Reciclaje</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">Acerca de Nostros</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
   </div>
     <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -58,17 +41,12 @@ body,h1,h2,h3,h4,h5,h6
 </div>
 <img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
 <!-- Header -->
-<header class="w3-container w3-green w3-center" style="padding:128px 16px">
-<h3 class="w3-margin w3-jumbo">Mostrar Bonos Actuales</h3>
-<form action="/abono.php" method="post" onsubmit= "alertaReserva()">
-<p> Lista de Premios Disponibles:&nbsp; <?php
-    $result = $conn->query($sql);
-echo "<select name='m1'>";
-while ($row = mysqli_fetch_array($result)) {
-    echo "<option value='" . $row['nombrePremio'] . "'>" . "Nombre Premio: " . $row['nombrePremio'] . ". Puntos Requeridos: " . $row['precio'] . "</option>";
-}
-echo "</select>";
-?>
+<header class="w3-container w3-white w3-center" style="padding:128px 16px">
+<h3 class="w3-margin w3-jumbo">Bonos Para Redimir</h3>
+<p class="w3-text-grey">Por favor ingrese su usuario para verificar su identidad.</p>
+<form action="/solbono1.php" method="post" onsubmit= "alertaReserva()">
+<p id="user">Usuario:<input type="text" name="user" required></p>
+<input type="submit" class="w3-button w3-green" value="Continuar" onclick="window.location.href='solbono1.php'">
 
 </form>
 </header>
