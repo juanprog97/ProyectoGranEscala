@@ -1,3 +1,15 @@
+<?php
+$servername = "19.18.18.4:3306";
+$username = "test";
+$password = "test";
+$dbname = "test";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT nombreMaterial FROM Materiales";
+
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -46,35 +58,46 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <p> Nombre de usuario:&nbsp; <input type="text" name="nUsuario" required><p>
     <p> Descripcion:&nbsp; <input type="text" name="descrip"><p>
 
-    <p> Material 1:&nbsp; <select name="m1">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can1" required><p>
+    <p> Material 1:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m1'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can1" required><p>
 
 
-<p> Material 2:&nbsp; <select name="m2">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can2" required><p>
+<p> Material 2:&nbsp; <?php
+$result = $conn->query($sql);
+echo "<select name='m2'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can2" required><p>
 
-    <p> Material 3:&nbsp; <select name="m3">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can3" required><p>
+    <p> Material 3:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m3'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can3" required><p>
 
-    <p> Material 4:&nbsp; <select name="m4">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can4" required><p>
-
+    <p> Material 4:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m4'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can4" required><p>
 
 
     <p id="fechareservada">Fecha Reserva: &nbsp; <input type="date" name="date" id="date" min="<?=date('Y-m-d',strtotime('+1 days')) ?>" required></p>
