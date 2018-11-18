@@ -97,6 +97,7 @@ $createTable9 = "CREATE TABLE IF NOT EXISTS Recoleccion (
    idPub int  NOT NULL,
    estado char(10)  NOT NULL,
    idTrabajador int  NOT NULL,
+   horaReco time  NOT NULL,
    FOREIGN KEY(idPub) REFERENCES Publicacion(idPublicacion) ON DELETE CASCADE,
    FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
   )";

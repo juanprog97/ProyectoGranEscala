@@ -41,17 +41,43 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1>Programar recogida de materiales</h1>
       <h5 class="w3-padding-32">A continuacion programe la fecha y hora para la recogida del material reciclable</h5>
-    <!--FECHA DE LA RESERVA con el calendario-- >
-    <!--MINIMO DE LA FECHA: SE UTILIZA EL ELEMENTO min PARA DEFINIR CUAL ES EL MINIMO DE FECHA DISPONIBLE EN TEORIA REEMPLAZAR:
-                    <input type="date" name="fdreserva" step="1" min="<?php echo date("Y-m-d");?>" required >
-         -->
-    <!--lISTA DE OPCIONES DESPLEGABLES-->
-    <!--Hora para la reserva-->
 		<form action="/action_page.php" method="post" onsubmit= "alertaReserva()">
 
-    <p id="fechareservada">Fecha Reserva: &nbsp; <input type="date" name="fdreserva" required></p>
+    <p> Nombre de usuario:&nbsp; <input type="text" name="nUsuario" required><p>
+    <p> Descripcion:&nbsp; <input type="text" name="descrip"><p>
+
+    <p> Material 1:&nbsp; <select name="m1">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can1" required><p>
 
 
+<p> Material 2:&nbsp; <select name="m2">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can2" required><p>
+
+    <p> Material 3:&nbsp; <select name="m3">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can3" required><p>
+
+    <p> Material 4:&nbsp; <select name="m4">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can4" required><p>
+
+
+
+    <p id="fechareservada">Fecha Reserva: &nbsp; <input type="date" name="date" id="date" min="<?=date('Y-m-d',strtotime('+1 days')) ?>" required></p>
     <p> Hora de reserva:&nbsp; <input type="time" name="ftime" required><p>
 
 
@@ -80,8 +106,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
     -->
-      <p class="w3-text-grey">Al intentar reservar se debe tener en cuenta que solo se puede hacer reservas con 12 horas de diferencia.</p>
-      <p id="demo"></p>
+      <p class="w3-text-grey">Al intentar reservar se debe tener en cuenta que solo se puede hacer reservas con minimo un dia de anticipacion.</p>
     </div>
 
     <div class="w3-third w3-center">
