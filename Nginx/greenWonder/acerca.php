@@ -29,9 +29,9 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">
     	Inicio
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
     	Solicitar Reciclaje
-    </a>
+    </a>-->
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca.php'">
     	Acerca de Nosotros
     </a>
