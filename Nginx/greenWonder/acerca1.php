@@ -29,10 +29,10 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">
     	Inicio
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='reservas.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
     	Solicitar Reciclaje
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca1.php'">
     	Acerca de Nosotros
     </a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
@@ -52,11 +52,10 @@ body,h1,h2,h3,h4,h5,h6
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>Condiciones para el servicio de reciclaje</h1>
-      <h5 class="w3-padding-32">Todos los usuarios registrados tienen derecho a solicitar la recogida de los materiales
-      reciclados en sus hogares</h5>
-
-      <p class="w3-text-grey">Debe informar con un minimo de 24 horas de anticipacion para que el material sea recogido.</p>
+      <h1>Acerca de GREEN WONDER</h1>
+      <h5 class="w3-padding-32">Somos una empresa dedicada a la entrega de bonos redimibles para las personas que reciclan en
+      la ciudad de Cali. Nuestro objetivo es que ofrecerle un reconocimiento a todo aquel que apoye esta actividad para la
+    mejora del medio ambiente</h5>
     </div>
 
     <div class="w3-third w3-center">
@@ -65,35 +64,12 @@ body,h1,h2,h3,h4,h5,h6
   </div>
 </div>
 
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-remove w3-padding-64 w3-text-red w3-margin-right" style="font-size:200px"></i>
-    </div>
 
-    <div class="w3-twothird">
-      <h1>Cancelar servicio de reciclaje</h1>
-      <h5 class="w3-padding-32">La solicitud del servicio debe cancelarse con minimo 24 horas de anticipacion.</h5>
-
-      <p class="w3-text-grey">Teng en cuenta que si cancela el dia anterior a lo programado no podra volver a pedir el servicio ese dia.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-
-<header class="w3-container w3-green w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">RECICLAJE</h1>
-  <p class="w3-xlarge">¿Que desea hacer?</p>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%" onclick="window.location.href='reservarZona.php'">Solicitar servicio de reciclaje</button>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%">Cancelar servicio de reciclaje</button>
-</header>
 
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">GREEN WORLD</h1>
+    <h1 class="w3-margin w3-xlarge">GREEN WONDER</h1>
 </div>
 
 <script>
