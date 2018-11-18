@@ -155,6 +155,7 @@ body,h1,h2,h3,h4,h5,h6
     	Acerca de Nosotros
     </a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'" >Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='loginsa.php'" >Admin</a>
   </div>
   <img src="fondo.jpg" width="1200" height="610" align="right">
 
