@@ -33,7 +33,7 @@ $createTable3 = "CREATE TABLE IF NOT EXISTS Usuarios (
   contrasena varchar(15)  NOT NULL,
   cedula varchar(11)  NOT NULL,
   direccion char(40)  NOT NULL,
-  celular numeric(11,0)  NOT NULL,
+  celular varchar(11)  NOT NULL,
   email char(30)  NOT NULL,
   fechaNac date  NOT NULL,
   puntos int  NOT NULL DEFAULT 0,
@@ -82,10 +82,10 @@ $createTable8 = "CREATE TABLE IF NOT EXISTS Trabajadores (
   nombreTrab char(30)  NULL,
   nombreTrabU varchar(15)  NOT NULL,
   contrasena varchar(15)  NOT NULL,
-   cedula int  NULL,
+   cedula varchar(12)  NULL,
    email char(30)  NOT NULL,
-   celular numeric(11,0)  NOT NULL,
-   rut numeric(15,0)  NOT NULL,
+   celular varchar(11)  NOT NULL,
+   rut varchar(15)  NOT NULL,
    fechaNac date  NOT NULL,
    idCiudad int  NOT NULL,
    FOREIGN KEY(idCiudad) REFERENCES Ciudad(idCiudad) ON DELETE CASCADE
@@ -100,10 +100,6 @@ $createTable9 = "CREATE TABLE IF NOT EXISTS Recoleccion (
    FOREIGN KEY(idPub) REFERENCES Publicacion(idPublicacion) ON DELETE CASCADE,
    FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
   )";
-
-
-
-
 
 if ($conn->query($createTable) === TRUE)
 if ($conn->query($createTable1) === TRUE)

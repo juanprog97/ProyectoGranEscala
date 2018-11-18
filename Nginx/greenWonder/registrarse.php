@@ -65,7 +65,7 @@ body,h1,h2,h3,h4,h5,h6
     </tr>
     <tr>
       <td align="right">CONTRASEÑA:</td>
-      <td align="left"><input type="text" name="contra" /></td>
+      <td align="left"><input type="password" name="contra" /></td>
     </tr>
     <tr>
       <td align="right">CORREO:</td>
@@ -89,7 +89,7 @@ body,h1,h2,h3,h4,h5,h6
     </tr>
     <tr>
       <td align="right"></td>
-      <td align="left"><input type="submit" value="Submit" onclick="window.location.href='index.html'"></td>
+      <td align="left"><input type="submit" value="Submit" onclick="window.location.href='reg.php'"></td>
     </tr>
   </table>
 </form>

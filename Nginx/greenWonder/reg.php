@@ -17,10 +17,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$insert = "INSERT INTO Usuarios(nombre,nombreUsuario,contraseña,cedula,direccion,celular,email,fechaNac,puntos,idCiudad,administrador)
-VALUES ('$Nombre','$NombreU','$Contraseña','$Ced','$Dir','$Cel','$Email','$Fecha',0,2,0)";
+$insert = "INSERT INTO Usuarios(nombre,nombreUsuario,contrasena,cedula,direccion,celular,email,fechaNac,puntos,idCiudad,administrador)
+VALUES ('$Nombre','$NombreU','$Contraseña','$Ced','$Dir','$Cel','$Email','$Fecha','0','1','0')";
 
 if ($conn->query($insert) === TRUE)
-
+header('Location: /index.php');
 
 ?>
