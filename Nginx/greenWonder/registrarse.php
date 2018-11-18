@@ -53,23 +53,39 @@ body,h1,h2,h3,h4,h5,h6
     <div class="w3-twothird">
       <h1>Registro</h1>
       <div class="container">
-   <form>
+   <form action="reg.php" method="post">
   <table>
     <tr>
       <td align="right">NOMBRE:</td>
       <td align="left"><input type="text" name="first" /></td>
     </tr>
     <tr>
-      <td align="right">APELLIDO:</td>
-      <td align="left"><input type="text" name="last" /></td>
-    </tr>
-    <tr>
       <td align="right">NOMBRE DE USUARIO:</td>
-      <td align="left"><input type="text" name="email" /></td>
+      <td align="left"><input type="text" name="nombreu" /></td>
     </tr>
     <tr>
       <td align="right">CONTRASEÑA:</td>
       <td align="left"><input type="text" name="contra" /></td>
+    </tr>
+    <tr>
+      <td align="right">CORREO:</td>
+      <td align="left"><input type="text" name="email" /></td>
+    </tr>
+    <tr>
+      <td align="right">DIRECCION:</td>
+      <td align="left"><input type="text" name="dir" /></td>
+    </tr>
+    <tr>
+      <td align="right">CELULAR:</td>
+      <td align="left"><input type="text" name="cel" /></td>
+    </tr>
+    <tr>
+      <td align="right">CEDULA:</td>
+      <td align="left"><input type="text" name="ced" /></td>
+    </tr>
+    <tr>
+      <td align="right">FECHA NACIMIENTO:</td>
+      <td align="left"><input type="date" name="fecha" /></td>
     </tr>
     <tr>
       <td align="right"></td>
@@ -95,18 +111,6 @@ body,h1,h2,h3,h4,h5,h6
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">GREEN WONDER</h1>
 </div>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
 
 </body>
 </html>

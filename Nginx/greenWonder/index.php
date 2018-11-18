@@ -22,29 +22,102 @@ $createTable1 = "CREATE TABLE IF NOT EXISTS Ciudad (
 $createTable2 = "CREATE TABLE IF NOT EXISTS Premios (
   idPremio INT AUTO_INCREMENT PRIMARY KEY,
   nombrePremio char(15)  NULL,
-   descripcion varchar(40)  NOT NULL,
-   precio int  NULL
+  descripcion varchar(40)  NOT NULL,
+  precio int  NULL
   )";
 
 $createTable3 = "CREATE TABLE IF NOT EXISTS Usuarios (
   idUsuario INT AUTO_INCREMENT PRIMARY KEY,
   nombre char(30)  NOT NULL,
-   cedula int  NOT NULL,
-   direccion char(40)  NOT NULL,
-   celular numeric(11,0)  NOT NULL,
-   email char(30)  NOT NULL,
-   fechaNac date  NOT NULL,
-   puntos int  NOT NULL DEFAULT 0,
-   idCiudad int  NOT NULL,
-   administrador boolean  NOT NULL DEFAULT 0,
-   FOREIGN KEY(idCiudad) REFERENCES Ciudad(idCiudad) ON DELETE CASCADE
-
+  nombreUsuario varchar(15)  NOT NULL,
+  contrasena varchar(15)  NOT NULL,
+  cedula varchar(11)  NOT NULL,
+  direccion char(40)  NOT NULL,
+  celular numeric(11,0)  NOT NULL,
+  email char(30)  NOT NULL,
+  fechaNac date  NOT NULL,
+  puntos int  NOT NULL DEFAULT 0,
+  idCiudad int  NOT NULL,
+  administrador boolean  NOT NULL DEFAULT 0,
+  FOREIGN KEY(idCiudad) REFERENCES Ciudad(idCiudad) ON DELETE CASCADE
   )";
+
+$createTable4 = "CREATE TABLE IF NOT EXISTS PremiosUsuario (
+  idPU INT AUTO_INCREMENT PRIMARY KEY,
+  nombrePremio char(15)  NULL,
+  fechaPu date  NULL,
+  idPremio int  NOT NULL,
+  idUsuario int  NOT NULL,
+  FOREIGN KEY(idPremio) REFERENCES Premios(idPremio) ON DELETE CASCADE,
+  FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario) ON DELETE CASCADE
+  )";
+
+$createTable5 = "CREATE TABLE IF NOT EXISTS Materiales (
+  idMaterial INT AUTO_INCREMENT PRIMARY KEY,
+  nombreMaterial char(15)  NULL,
+   puntosMaterial int  NULL
+  )";
+
+$createTable6 = "CREATE TABLE IF NOT EXISTS Publicacion (
+  idPublicacion INT AUTO_INCREMENT PRIMARY KEY,
+  fechaPub date  NULL,
+  mensaje varchar(150)  NOT NULL,
+  totalPuntos int  NOT NULL,
+  idUsuario int  NOT NULL,
+  FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario) ON DELETE CASCADE
+  )";
+
+$createTable7 = "CREATE TABLE IF NOT EXISTS MaterialesPublicacion (
+  idMP INT AUTO_INCREMENT PRIMARY KEY,
+  idPub int  NOT NULL,
+   idMaterial int  NOT NULL,
+   peso int  NOT NULL,
+   puntosM int  NOT NULL,
+  FOREIGN KEY(idPub) REFERENCES Publicacion(idPublicacion) ON DELETE CASCADE,
+  FOREIGN KEY(idMaterial) REFERENCES Materiales(idMaterial) ON DELETE CASCADE
+  )";
+
+$createTable8 = "CREATE TABLE IF NOT EXISTS Trabajadores (
+  idTrabajador INT AUTO_INCREMENT PRIMARY KEY,
+  nombreTrab char(30)  NULL,
+  nombreTrabU varchar(15)  NOT NULL,
+  contrasena varchar(15)  NOT NULL,
+   cedula int  NULL,
+   email char(30)  NOT NULL,
+   celular numeric(11,0)  NOT NULL,
+   rut numeric(15,0)  NOT NULL,
+   fechaNac date  NOT NULL,
+   idCiudad int  NOT NULL,
+   FOREIGN KEY(idCiudad) REFERENCES Ciudad(idCiudad) ON DELETE CASCADE
+  )";
+
+$createTable9 = "CREATE TABLE IF NOT EXISTS Recoleccion (
+  idReco INT AUTO_INCREMENT PRIMARY KEY,
+  fechaReco date  NOT NULL,
+   idPub int  NOT NULL,
+   estado char(10)  NOT NULL,
+   idTrabajador int  NOT NULL,
+   FOREIGN KEY(idPub) REFERENCES Publicacion(idPublicacion) ON DELETE CASCADE,
+   FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
+  )";
+
+
+
+
 
 if ($conn->query($createTable) === TRUE)
 if ($conn->query($createTable1) === TRUE)
 if ($conn->query($createTable2) === TRUE)
 if ($conn->query($createTable3) === TRUE)
+if ($conn->query($createTable4) === TRUE)
+if ($conn->query($createTable5) === TRUE)
+if ($conn->query($createTable6) === TRUE)
+if (!$conn->query($createTable7) === TRUE) {
+  echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
+if (!$conn->query($createTable8) === TRUE) {
+  echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
+if (!$conn->query($createTable9) === TRUE) {
+  echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
 ?>
 <html>
 <title>ERP-GREEN WONDER</title>
