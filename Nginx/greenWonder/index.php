@@ -63,7 +63,12 @@ $createTable6 = "CREATE TABLE IF NOT EXISTS Publicacion (
   mensaje varchar(150)  NOT NULL,
   totalPuntos int  NOT NULL,
   idUsuario int  NOT NULL,
-  FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario) ON DELETE CASCADE
+  estado char(4)  NOT NULL,
+   idTrabajador int  NULL,
+   horaReco time  NOT NULL,
+   fechaReco date  NOT NULL,
+  FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario) ON DELETE CASCADE,
+  FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
   )";
 
 $createTable7 = "CREATE TABLE IF NOT EXISTS MaterialesPublicacion (
@@ -90,17 +95,6 @@ $createTable8 = "CREATE TABLE IF NOT EXISTS Trabajadores (
    FOREIGN KEY(idCiudad) REFERENCES Ciudad(idCiudad) ON DELETE CASCADE
   )";
 
-$createTable9 = "CREATE TABLE IF NOT EXISTS Recoleccion (
-  idReco INT AUTO_INCREMENT PRIMARY KEY,
-  fechaReco date  NOT NULL,
-   idPub int  NOT NULL,
-   estado char(10)  NOT NULL,
-   idTrabajador int  NOT NULL,
-   horaReco time  NOT NULL,
-   FOREIGN KEY(idPub) REFERENCES Publicacion(idPublicacion) ON DELETE CASCADE,
-   FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
-  )";
-
 if ($conn->query($createTable) === TRUE)
 if ($conn->query($createTable1) === TRUE)
 if ($conn->query($createTable2) === TRUE)
@@ -111,8 +105,6 @@ if ($conn->query($createTable6) === TRUE)
 if (!$conn->query($createTable7) === TRUE) {
   echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
 if (!$conn->query($createTable8) === TRUE) {
-  echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
-if (!$conn->query($createTable9) === TRUE) {
   echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
 ?>
 <!DOCTYPE html>

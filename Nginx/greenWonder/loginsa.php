@@ -30,14 +30,7 @@ body,h1,h2,h3,h4,h5,h6
      onclick="window.location.href='index.php'">
     	Inicio
     </a>
-    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-    onclick="window.location.href='reservas.php'">
-    	Solicitar Reciclaje
-    </a>-->
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca.php'">
-    	Acerca de Nosotros
-    </a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='logins.php'" >Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='logins.php'" >Ingreso Admin</a>
   </div>
 
     <!-- Navbar on small screens -->
@@ -52,7 +45,7 @@ body,h1,h2,h3,h4,h5,h6
 <!-- Header -->
 
 <header class="w3-container w3-green w3-center" style="padding:128px 16px">
-  <h3 class="w3-margin w3-jumbo">Login</h3>
+  <h3 class="w3-margin w3-jumbo">Login Admin</h3>
   	<form action="/loga.php" method="post" onsubmit= "alertaReserva()">
 
     <p id="user">

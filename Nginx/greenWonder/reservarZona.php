@@ -58,7 +58,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <h5 class="w3-padding-32">A continuacion programe la fecha y hora para la recogida del material reciclable</h5>
 		<form action="/action_page.php" method="post" onsubmit= "alertaReserva()">
 
-    <p> Nombre de usuario:&nbsp; <input type="text" name="nUsuario" required><p>
     <p> Descripcion:&nbsp; <input type="text" name="descrip"><p>
 
     <p> Material 1:&nbsp; <?php
