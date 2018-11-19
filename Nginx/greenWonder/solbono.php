@@ -47,6 +47,7 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">Acerca de Nostros</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
   </div>
     <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">

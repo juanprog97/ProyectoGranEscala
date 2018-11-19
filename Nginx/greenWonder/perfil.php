@@ -1,3 +1,18 @@
+<?php
+session_start();
+$servername = "19.18.18.4:3306";
+$username = "test";
+$password = "test";
+$dbname = "test";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$Nombre = $_SESSION["usr"];
+$q = "SELECT * FROM Usuarios NATURAL JOIN Ciudad WHERE nombreUsuario = '$Nombre'";
+$result = $conn->query($q);
+$row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -26,16 +41,12 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"  onclick="window.location.href='index.php'">
-    	Inicio
-    </a>
-    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
-    	Solicitar Reciclaje
-    </a>-->
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca.php'">
-    	Acerca de Nosotros
-    </a>
-    <a  href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='logins.php'">Ingreso/Registro</a>
+     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white"onclick="window.location.href='index1.php'">Inicio</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"onclick="window.location.href='reservas.php'">Solicitar Reciclaje </a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">Acerca de Nosotros    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
   </div>
 
     <!-- Navbar on small screens -->
@@ -57,39 +68,39 @@ body,h1,h2,h3,h4,h5,h6
   <table>
     <tr>
       <td align="right">NOMBRE:</td>
-      <td align="left"><input type="text" name="first" /></td>
+      <td> <?php echo $row['nombre'] ?></td>
     </tr>
     <tr>
       <td align="right">NOMBRE DE USUARIO:</td>
-      <td align="left"><input type="text" name="nombreu" /></td>
-    </tr>
-    <tr>
-      <td align="right">CONTRASEÑA:</td>
-      <td align="left"><input type="password" name="contra" /></td>
+      <td> <?php echo $row['nombreUsuario'] ?></td>
     </tr>
     <tr>
       <td align="right">CORREO:</td>
-      <td align="left"><input type="text" name="email" /></td>
+      <td> <?php echo $row['email'] ?></td>
     </tr>
     <tr>
       <td align="right">DIRECCION:</td>
-      <td align="left"><input type="text" name="dir" /></td>
+      <td> <?php echo $row['direccion'] ?></td>
     </tr>
     <tr>
       <td align="right">CELULAR:</td>
-      <td align="left"><input type="text" name="cel" /></td>
+      <td> <?php echo $row['celular'] ?></td>
     </tr>
     <tr>
       <td align="right">CEDULA:</td>
-      <td align="left"><input type="text" name="ced" /></td>
+      <td> <?php echo $row['cedula'] ?></td>
     </tr>
     <tr>
       <td align="right">FECHA NACIMIENTO:</td>
-      <td align="left"><input type="date" name="fecha" /></td>
+      <td> <?php echo $row['fechaNac'] ?></td>
     </tr>
     <tr>
-      <td align="right"></td>
-      <td align="left"><input type="submit" value="Submit" onclick="window.location.href='reg.php'"></td>
+      <td align="right">CIUDAD:</td>
+      <td> <?php echo $row['nombreCiudad'] ?></td>
+    </tr>
+    <tr>
+      <td align="right">PUNTOS:</td>
+      <td> <?php echo $row['puntos'] ?></td>
     </tr>
   </table>
 </form>
