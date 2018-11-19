@@ -1,3 +1,20 @@
+<?php
+session_start();
+$servername = "19.18.18.4:3306";
+$username = "test";
+$password = "test";
+$dbname = "test";
+$Nombre = $_SESSION["usr"];
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT nombrePremio,precio FROM Premios";
+$sql1 = "SELECT puntos FROM Usuarios WHERE nombreUsuario = '$Nombre'";
+$res = $conn->query($sql1);
+$row1 = mysqli_fetch_array($res);
+
+?>
 <html>
 <title>ERP-GREEN WONDER</title>
 <meta charset="UTF-8">
@@ -43,10 +60,18 @@ body,h1,h2,h3,h4,h5,h6
 <!-- Header -->
 <header class="w3-container w3-white w3-center" style="padding:128px 16px">
 <h3 class="w3-margin w3-jumbo">Bonos Para Redimir</h3>
-<p class="w3-text-grey">Por favor ingrese su usuario para verificar su identidad.</p>
-<form action="/solbono1.php" method="post" onsubmit= "alertaReserva()">
-<p id="user">Usuario:<input type="text" name="user" required></p>
-<input type="submit" class="w3-button w3-green" value="Continuar" onclick="window.location.href='solbono1.php'">
+<p class="w3-text-grey">Recuerde verificar sus puntos y verificiar que los puntos que requiere el bono sean menores o iguales.</p>
+<p class="w3-text-grey">Tus Puntos: </p>&nbsp;<label><?php echo $row1['puntos'] ?></label>
+<form action="/abono.php" method="post" onsubmit= "alertaReserva()">
+<p> Lista de Bonos Disponibles:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m1'>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombrePremio'] . "'>" . "Nombre Premio: " . $row['nombrePremio'] . ". Puntos Requeridos: " . $row['precio'] . "</option>";
+}
+echo "</select>";
+?>
+<input type="submit" class="w3-button w3-green" value="Solicitar Bono" onclick="window.location.href='amat.php'">
 
 </form>
 </header>

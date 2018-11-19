@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php
+session_start();
 $servername = "19.18.18.4:3306";
 $username = "test";
 $password = "test";
@@ -115,6 +115,7 @@ if (!$conn->query($createTable8) === TRUE) {
 if (!$conn->query($createTable9) === TRUE) {
   echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
 ?>
+<!DOCTYPE html>
 <html>
 <title>ERP-GREEN WONDER</title>
 <meta charset="UTF-8">
@@ -143,7 +144,7 @@ body,h1,h2,h3,h4,h5,h6
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-white"
-     onclick="window.location.href='index.php'">
+     onclick="window.location.href='index1.php'">
     	Inicio
     </a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
@@ -155,6 +156,7 @@ body,h1,h2,h3,h4,h5,h6
     </a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'"><?php echo $_SESSION["usr"]?></a>
     <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'" >Ingreso/Registro</a>-->
   </div>
   <img src="fondo.jpg" width="1200" height="610" align="right">
