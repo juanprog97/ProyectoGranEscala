@@ -1,3 +1,16 @@
+<?php
+$servername = "19.18.18.4:3306";
+$username = "test";
+$password = "test";
+$dbname = "test";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT idCiudad,nombreCiudad FROM Ciudad";
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -86,6 +99,16 @@ body,h1,h2,h3,h4,h5,h6
     <tr>
       <td align="right">FECHA NACIMIENTO:</td>
       <td align="left"><input type="date" name="fecha" /></td>
+    </tr>
+    <tr>
+      <td align="right">CIUDAD:</td> 
+       <td><?php echo "<select name='cid'>"; 
+          while ($row = mysqli_fetch_array($result)) {
+            echo "<option value='" . $row['idCiudad'] . "'>" . $row['nombreCiudad'] . "</option>";
+          }
+        echo "</select>";
+      ?>
+    </td>
     </tr>
     <tr>
       <td align="right"></td>
