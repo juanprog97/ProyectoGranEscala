@@ -81,7 +81,7 @@ body,h1,h2,h3,h4,h5,h6
       <h1>Cancelar servicio de reciclaje</h1>
       <h5 class="w3-padding-32">La solicitud del servicio debe cancelarse con minimo 24 horas de anticipacion.</h5>
 
-      <p class="w3-text-grey">Teng en cuenta que si cancela el dia anterior a lo programado no podra volver a pedir el servicio ese dia.</p>
+      <p class="w3-text-grey">Tenga en cuenta que si cancela el dia anterior a lo programado no podra volver a pedir el servicio ese dia.</p>
     </div>
   </div>
 </div>
@@ -92,7 +92,7 @@ body,h1,h2,h3,h4,h5,h6
   <h1 class="w3-margin w3-jumbo">RECICLAJE</h1>
   <p class="w3-xlarge">¿Que desea hacer?</p>
   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%" onclick="window.location.href='reservarZona.php'">Solicitar servicio de reciclaje</button>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%">Cancelar servicio de reciclaje</button>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%" onclick="window.location.href='cancelar.php'">Cancelar servicio de reciclaje</button>
 </header>
 
 
