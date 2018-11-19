@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 $servername = "19.18.18.4:3306";
 $username = "test";
@@ -116,6 +115,7 @@ if (!$conn->query($createTable8) === TRUE) {
 if (!$conn->query($createTable9) === TRUE) {
   echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;}
 ?>
+<!DOCTYPE html>
 <html>
 <title>ERP-GREEN WONDER</title>
 <meta charset="UTF-8">

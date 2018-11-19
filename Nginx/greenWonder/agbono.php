@@ -25,23 +25,17 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-white"
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white"
      onclick="window.location.href='admin.php'">
     	Inicio
     </a>
-    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-    onclick="window.location.href='reservas.php'">
-    	Solicitar Reciclaje
-    </a>-->
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='agmat.php'">
     	Agregar Materiales
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='agbono.php'" >Agregar Premios</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white" onclick="window.location.href='agbono.php'" >Agregar Premios</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='mbonos.php'" >Mostrar Bonos Actuales</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'" >LogOut</a>
   </div>
-  <img src="fondo.jpg" width="1200" height="610" align="right">
-
     <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -52,5 +46,14 @@ body,h1,h2,h3,h4,h5,h6
 </div>
 <img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
 <!-- Header -->
+<header class="w3-container w3-green w3-center" style="padding:128px 16px">
+<h3 class="w3-margin w3-jumbo">Nuevo Bono</h3>
+<form action="/abono.php" method="post" onsubmit= "alertaReserva()">
+<p> Nombre del Bono:&nbsp; <input type="text" name="nBon" required><p>
+<p> Descripcion Bono:&nbsp; <input type="text" name="dBon" required><p>
+<p> Puntos Requeridos:&nbsp; <input type="number" min="0" name="pRe" required><p>
+<input type="submit" class="w3-button w3-white" value="Agregar" onclick="window.location.href='abono.php'">
+</form>
+</header>
 </body>
 </html>
