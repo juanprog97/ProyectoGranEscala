@@ -65,7 +65,6 @@ $createTable6 = "CREATE TABLE IF NOT EXISTS Publicacion (
   idUsuario int  NOT NULL,
   estado char(4)  NOT NULL,
    idTrabajador int  NULL,
-   horaReco time  NOT NULL,
    fechaReco date  NOT NULL,
   FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario) ON DELETE CASCADE,
   FOREIGN KEY(idTrabajador) REFERENCES Trabajadores(idTrabajador) ON DELETE CASCADE
