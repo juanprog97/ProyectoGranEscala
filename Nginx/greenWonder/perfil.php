@@ -64,7 +64,6 @@ body,h1,h2,h3,h4,h5,h6
     <div class="w3-twothird">
       <h1>Perfil Usuario</h1>
       <div class="container">
-   <form action="reg.php" method="post">
   <table>
     <tr>
       <td align="right">NOMBRE:</td>
@@ -102,8 +101,11 @@ body,h1,h2,h3,h4,h5,h6
       <td align="right">PUNTOS:</td>
       <td> <?php echo $row['puntos'] ?></td>
     </tr>
+    <tr>
+      <td align="right">TUS BONOS REDIMIDOS:</td>
+      <td> <input type="submit" value="Mis Bonos" onclick="window.location.href='bonosU.php'"></td>
+    </tr>
   </table>
-</form>
   </div>
 
 

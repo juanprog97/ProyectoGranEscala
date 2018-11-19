@@ -43,7 +43,6 @@ $createTable3 = "CREATE TABLE IF NOT EXISTS Usuarios (
 
 $createTable4 = "CREATE TABLE IF NOT EXISTS PremiosUsuario (
   idPU INT AUTO_INCREMENT PRIMARY KEY,
-  nombrePremio char(15)  NULL,
   fechaPu date  NULL,
   idPremio int  NOT NULL,
   idUsuario int  NOT NULL,
