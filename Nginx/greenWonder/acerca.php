@@ -35,7 +35,9 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca.php'">
     	Acerca de Nosotros
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'">Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'" >Ingreso/Registro Usuarios</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logint.php'" >Ingreso Trabajadores </a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='loginsa.php'" >Admin</a>
   </div>
 
     <!-- Navbar on small screens -->
