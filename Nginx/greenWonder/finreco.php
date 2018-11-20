@@ -63,7 +63,7 @@ body,h1,h2,h3,h4,h5,h6
 <img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
 <!-- Header -->
 <header class="w3-container w3-white w3-center" style="padding:128px 16px">
-<h3 class="w3-margin w3-jumbo">Tus Servicios Pendientes</h3>
+<h3 class="w3-margin w3-jumbo">Tus Servicios Por Finalizar</h3>
 <form action="/finre.php" method="post"">
 <p> Lista de servicios que tienes pendientes por finalizar:&nbsp; <?php
 echo "<select name='m1'>";
@@ -72,8 +72,7 @@ while ($row = mysqli_fetch_array($res)) {
 }
 echo "</select>";
 ?>
-<input type="submit" class="w3-button w3-green" value="Seleccionar Servicio" onclick="window.location.href='finre.php'">
-<!--<input type="submit" class="w3-button w3-green" value="Mostrar Informacion" onclick="mostrarInfo()">-->
+<input type="submit" class="w3-button w3-green" value="Finalizar Servicio" onclick="window.location.href='finre.php'">
 </form>
 </header>
 </body>

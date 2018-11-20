@@ -24,6 +24,6 @@ $nuevos = intval($nuevos);
 $sql4 = "UPDATE Usuarios SET puntos = puntos + $nuevos WHERE idUsuario = '$idUsuario'";
 if(!$conn->query($sql4)){echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;};
 
-#header('Location: /finreco.php');
+header('Location: /finreco.php');
 
 ?>
