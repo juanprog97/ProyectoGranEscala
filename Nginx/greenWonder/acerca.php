@@ -70,8 +70,14 @@ body,h1,h2,h3,h4,h5,h6
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">GREEN WONDER</h1>
+    <img src="logo.png" width="50px" height="100px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
+    <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
+     <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
+<script type="text/javascript">
+  controller.getElementById('botonA').style.cursor = "pointer";
+</script>
+
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
