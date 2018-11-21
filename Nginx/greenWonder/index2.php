@@ -35,6 +35,7 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white""><?php echo $_SESSION["usr"]?></a>
   </div>
+  <img src="fondo.jpg" width="1200" height="610" align="right">
 
     <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -64,5 +65,7 @@ body,h1,h2,h3,h4,h5,h6
 </div>
 
 
+<img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
+<!-- Header -->
 </body>
 </html>
