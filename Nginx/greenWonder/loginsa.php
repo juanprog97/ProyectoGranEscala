@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>GREEN WONDER</title>
+<title>ERP-GREEN WONDER</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,18 +26,16 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+     onclick="window.location.href='index.php'">
     	Inicio
     </a>
-    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
-    	Solicitar Reciclaje
-    </a>-->
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca.php'">
     	Acerca de Nosotros
     </a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'" >Ingreso/Registro Usuarios</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logint.php'" >Ingreso Trabajadores </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='loginsa.php'" >Admin</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white" onclick="window.location.href='loginsa.php'" >Admin</a>
   </div>
 
     <!-- Navbar on small screens -->
@@ -49,23 +47,29 @@ body,h1,h2,h3,h4,h5,h6
   </div>
 </div>
 <img src="logo.png" width="150px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Acerca de GREEN WONDER</h1>
-      <h5 class="w3-padding-32">Somos una empresa dedicada a la entrega de bonos redimibles para las personas que reciclan en
-      la ciudad de Cali. Nuestro objetivo es que ofrecerle un reconocimiento a todo aquel que apoye esta actividad para la
-    mejora del medio ambiente</h5>
-    </div>
+<!-- Header -->
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-address-book w3-padding-64 w3-text-green" style="font-size:200px"></i>
-    </div>
-  </div>
-</div>
+<header class="w3-container w3-green w3-center" style="padding:128px 16px">
+  <h3 class="w3-margin w3-jumbo">Login Admin</h3>
+  	<form action="/loga.php" method="post" onsubmit= "alertaReserva()">
+
+    <p id="user">
+    	Usuario: </br>
+   	<input type="text" name="user" required>
+   	</p>
+
+    <p id="password">
+    	Contrasena: </br>
+    	<input type="password" name="contrasena" id="contrasena" required></br>
+    	<input type="checkbox" onclick="mostrarContrasenia()">mostrar contraseña
+	</p>
+
+    <input type="submit" class="w3-button w3-white" value="Ingresar" onclick="window.location.href='loga.php'">
 
 
+
+    </form>
+</header>
 
 
 
@@ -74,10 +78,6 @@ body,h1,h2,h3,h4,h5,h6
     <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
      <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
-<script type="text/javascript">
-  controller.getElementById('botonA').style.cursor = "pointer";
-</script>
-
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -87,6 +87,15 @@ function myFunction() {
         x.className += " w3-show";
     } else {
         x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function mostrarContrasenia() {
+    var x = document.getElementById("contrasena");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
     }
 }
 </script>

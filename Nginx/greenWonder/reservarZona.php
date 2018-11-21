@@ -1,3 +1,16 @@
+<?php
+session_start();
+$servername = "19.18.18.4:3306";
+$username = "test";
+$password = "test";
+$dbname = "test";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT nombreMaterial FROM Materiales";
+
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -18,11 +31,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-green w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">Inicio</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='reservas.php'">Bonos</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Acerca de Nosotros</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-    onclick="window.location.href='logins.php'" >Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">Inicio</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='reservas.php'">Solicitar Reciclaje</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">Acerca de Nostros</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+    onclick="window.location.href='logins.php'" >Ingreso/Registro</a>-->
   </div>
 
     <!-- Navbar on small screens -->
@@ -40,18 +56,53 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1>Programar recogida de materiales</h1>
       <h5 class="w3-padding-32">A continuacion programe la fecha y hora para la recogida del material reciclable</h5>
-    <!--FECHA DE LA RESERVA con el calendario-- >
-    <!--MINIMO DE LA FECHA: SE UTILIZA EL ELEMENTO min PARA DEFINIR CUAL ES EL MINIMO DE FECHA DISPONIBLE EN TEORIA REEMPLAZAR:
-                    <input type="date" name="fdreserva" step="1" min="<?php echo date("Y-m-d");?>" required >
-         -->
-    <!--lISTA DE OPCIONES DESPLEGABLES-->
-    <!--Hora para la reserva-->
-		<form action="/action_page.php" method="post" onsubmit= "alertaReserva()">
+		<form action="/reco.php" method="post" onsubmit= "alertaReserva()">
 
-    <p id="fechareservada">Fecha Reserva: &nbsp; <input type="date" name="fdreserva" required></p>
+    <p> Descripcion:&nbsp; <input type="text" name="descrip"><p>
+
+    <p> Material 1:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m1'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can1" required><p>
 
 
-    <p> Hora de reserva:&nbsp; <input type="time" name="ftime" required><p>
+<p> Material 2:&nbsp; <?php
+$result = $conn->query($sql);
+echo "<select name='m2'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can2" required><p>
+
+    <p> Material 3:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m3'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can3" required><p>
+
+    <p> Material 4:&nbsp; <?php
+    $result = $conn->query($sql);
+echo "<select name='m4'>";
+echo "<option value='Vacio'>Vacio</option>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<option value='" . $row['nombreMaterial'] . "'>" . $row['nombreMaterial'] . "</option>";
+}
+echo "</select>";
+?>>&nbsp; Cantidad:&nbsp;  <input type="number" min="0" name="can4" required><p>
+
+
+    <p id="fechareservada">Fecha Reserva: &nbsp; <input type="date" name="date" id="date" min="<?=date('Y-m-d',strtotime('+1 days')) ?>" required></p>
 
 
 
@@ -79,8 +130,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
     -->
-      <p class="w3-text-grey">Al intentar reservar se debe tener en cuenta que solo se puede hacer reservas con 12 horas de diferencia.</p>
-      <p id="demo"></p>
+      <p class="w3-text-grey">Al intentar reservar se debe tener en cuenta que solo se puede hacer reservas con minimo un dia de anticipacion.</p>
     </div>
 
     <div class="w3-third w3-center">
@@ -91,7 +141,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">GREEN WONDER</h1>
+    <img src="logo.png" width="50px" height="100px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
+    <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
+     <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
 
 <script>

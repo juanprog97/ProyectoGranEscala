@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -26,16 +29,19 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">
     	Inicio
     </a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='reservas.php'">
     	Solicitar Reciclaje
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">
     	Acerca de Nosotros
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'">Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'">Ingreso/Registro</a>-->
   </div>
 
     <!-- Navbar on small screens -->
@@ -75,7 +81,7 @@ body,h1,h2,h3,h4,h5,h6
       <h1>Cancelar servicio de reciclaje</h1>
       <h5 class="w3-padding-32">La solicitud del servicio debe cancelarse con minimo 24 horas de anticipacion.</h5>
 
-      <p class="w3-text-grey">Teng en cuenta que si cancela el dia anterior a lo programado no podra volver a pedir el servicio ese dia.</p>
+      <p class="w3-text-grey">Tenga en cuenta que si cancela el dia anterior a lo programado no podra volver a pedir el servicio ese dia.</p>
     </div>
   </div>
 </div>
@@ -86,13 +92,15 @@ body,h1,h2,h3,h4,h5,h6
   <h1 class="w3-margin w3-jumbo">RECICLAJE</h1>
   <p class="w3-xlarge">¿Que desea hacer?</p>
   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%" onclick="window.location.href='reservarZona.php'">Solicitar servicio de reciclaje</button>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%">Cancelar servicio de reciclaje</button>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" style="padding-left:33%" onclick="window.location.href='cancelar.php'">Cancelar servicio de reciclaje</button>
 </header>
 
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">GREEN WORLD</h1>
+    <img src="logo.png" width="50px" height="100px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
+    <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
+     <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
 
 <script>

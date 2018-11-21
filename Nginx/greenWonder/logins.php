@@ -30,14 +30,16 @@ body,h1,h2,h3,h4,h5,h6
      onclick="window.location.href='index.php'">
     	Inicio
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
     onclick="window.location.href='reservas.php'">
     	Solicitar Reciclaje
-    </a>
+    </a>-->
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='acerca.php'">
     	Acerca de Nosotros
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='logins.php'" >Ingreso/Registro</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='logins.php'" >Ingreso/Registro Usuarios</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logint.php'" >Ingreso Trabajadores </a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='loginsa.php'" >Admin</a>
   </div>
 
     <!-- Navbar on small screens -->
@@ -52,8 +54,8 @@ body,h1,h2,h3,h4,h5,h6
 <!-- Header -->
 
 <header class="w3-container w3-green w3-center" style="padding:128px 16px">
-  <h3 class="w3-margin w3-jumbo">Login</h3>
-  	<form action="/action_page.php" method="post" onsubmit= "alertaReserva()">
+  <h3 class="w3-margin w3-jumbo">Login Usuarios</h3>
+  	<form action="/log.php" method="post" onsubmit= "alertaReserva()">
 
     <p id="user">
     	Usuario: </br>
@@ -62,11 +64,11 @@ body,h1,h2,h3,h4,h5,h6
 
     <p id="password">
     	Contrasena: </br>
-    	<input type="password" id="contrasena" required></br>
+    	<input type="password" name="contrasena" id="contrasena" required></br>
     	<input type="checkbox" onclick="mostrarContrasenia()">mostrar contraseña
 	</p>
 
-    <input type="submit" class="w3-button w3-white" value="Ingresar" onclick="window.location.href='index.php'">
+    <input type="submit" class="w3-button w3-white" value="Ingresar" onclick="window.location.href='log.php'">
     <button type="button" class="w3-button w3-white" onclick="window.location.href='registrarse.php'">
     	Registrarse
     </button>
@@ -78,8 +80,10 @@ body,h1,h2,h3,h4,h5,h6
 
 
 
-<div class="w3-container w3-white w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge w3-white">GREEN WONDER</h1>
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <img src="logo.png" width="50px" height="100px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
+    <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
+     <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
 
 <script>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <title>GREEN WONDER</title>
@@ -26,18 +29,19 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">
     	Inicio
     </a>
-    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">
     	Solicitar Reciclaje
-    </a>-->
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca.php'">
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" onclick="window.location.href='acerca1.php'">
     	Acerca de Nosotros
     </a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'" >Ingreso/Registro Usuarios</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='logint.php'" >Ingreso Trabajadores </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='loginsa.php'" >Admin</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='logins.php'">Ingreso/Registro</a>-->
   </div>
 
     <!-- Navbar on small screens -->
@@ -74,10 +78,6 @@ body,h1,h2,h3,h4,h5,h6
     <h1 class="w3-margin w3-xlarge"><u>GREEN WONDER</u></h1>
      <font  style="cursor: pointer;" href="#"  onclick="window.location.href='acerca.php'" size="3" id = "botonA">Acerca </font> 
 </div>
-<script type="text/javascript">
-  controller.getElementById('botonA').style.cursor = "pointer";
-</script>
-
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
