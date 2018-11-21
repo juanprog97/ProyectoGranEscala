@@ -10,13 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$idU = "SELECT idUsuario FROM Usuarios WHERE nombreUsuario = '$Nombre'";
-$res1 = $conn->query($idU);
-$row1 = mysqli_fetch_array($res1);
-$idUsuario = $row1['idUsuario'];
+$sql2 = "SELECT idTrabajador FROM Trabajadores WHERE nombreTrabU = '$Nombre'";
+$res2 = $conn->query($sql2);
+$row1 = mysqli_fetch_array($res2);
+$idTrabajador = $row1['idTrabajador'];
 
-
-$sql1 = "SELECT idPublicacion,mensaje,fechaPub FROM Publicacion NATURAL JOIN Usuarios WHERE nombreUsuario = '$Nombre' AND estado != 'CANC' AND estado != 'FINA'";
+$sql1 = "SELECT idPublicacion,mensaje,fechaPub FROM Publicacion WHERE idTrabajador = $idTrabajador AND estado = 'SELE'";
 $res = $conn->query($sql1);
 
 ?>
@@ -47,12 +46,11 @@ body,h1,h2,h3,h4,h5,h6
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right
     w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);"
      onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="window.location.href='index1.php'">Inicio</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='reservas.php'">Solicitar Reciclaje</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='acerca1.php'">Acerca de Nostros</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='solbono.php'">Redencion Bonos</a>
+     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white"onclick="window.location.href='index2.php'">Inicio</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"onclick="window.location.href='ereco.php'">Elegir Recoleccion</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white" onclick="window.location.href='finreco.php'">Finalizar Recoleccion</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white""><?php echo $_SESSION["usr"]?></a>
   </div>
     <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -65,16 +63,16 @@ body,h1,h2,h3,h4,h5,h6
 <img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
 <!-- Header -->
 <header class="w3-container w3-white w3-center" style="padding:128px 16px">
-<h3 class="w3-margin w3-jumbo">Servicios Pendientes</h3>
-<form action="/can.php" method="post" onsubmit= "alertaReserva()">
-<p> Lista de servicios pendientes del usuario:&nbsp; <?php
+<h3 class="w3-margin w3-jumbo">Tus Servicios Por Finalizar</h3>
+<form action="/finre.php" method="post"">
+<p> Lista de servicios que tienes pendientes por finalizar:&nbsp; <?php
 echo "<select name='m1'>";
 while ($row = mysqli_fetch_array($res)) {
     echo "<option value='" . $row['idPublicacion'] . "'>" . "Descripcion: " . $row['mensaje'] . ". Fecha Publicacion: " . $row['fechaPub'] . "</option>";
 }
 echo "</select>";
 ?>
-<input type="submit" class="w3-button w3-green" value="Cancelar Servicio" onclick="window.location.href='can.php'">
+<input type="submit" class="w3-button w3-green" value="Finalizar Servicio" onclick="window.location.href='finre.php'">
 </form>
 </header>
 </body>

@@ -85,5 +85,5 @@ if($M4 != 'Vacio'){
 
 $sql3 = "UPDATE Publicacion SET totalPuntos = $tt order by idPublicacion DESC LIMIT 1";
 $conn->query($sql3);
-header('Location: /index.php');
+header('Location: /index1.php');
 ?>

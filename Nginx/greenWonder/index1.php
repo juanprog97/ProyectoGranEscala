@@ -36,6 +36,7 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='index.php'">LogOut</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" onclick="window.location.href='perfil.php'"><?php echo $_SESSION["usr"]?></a>
   </div>
+
   <img src="fondo.jpg" width="1200" height="610" align="right">
 
     <!-- Navbar on small screens -->
@@ -46,6 +47,42 @@ body,h1,h2,h3,h4,h5,h6
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
   </div>
 </div>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-48 w3-container">
+  <img src="fondo.jpg" width="1350" height="610" align="left">
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="rec2.jpg" width="300" height="200" align="left">
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Servicio de Reciclaje</h1>
+      <h3 class="w3-padding-32">Pide un servicio de reciclaje a la hora que quieras</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-green w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="trophy.jpg" width="200" height="300" align="left">
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Premios</h1>
+      <h3 class="w3-padding-32">Acumula puntos por reciclar para ganar bonos y premios!</h3>
+    </div>
+  </div>
+</div>
+
+
+
 <img src="logo.png" width="165px" height="200px" alt="logo" style="padding-top:50px" background-attachment: fixed;/*style="background-color:rgb(227, 238, 248);"*/ >
 <!-- Header -->
 </body>
